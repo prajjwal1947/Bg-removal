@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px; /* Adjust as needed */
+  background-color: #d1d5db; /* Optional: Tailwind's gray-300 */
+  border-radius: 9999px; /* Fully rounded ends */
+  outline: none;
+  cursor: pointer;
+}
+
+/* For WebKit (Chrome, Safari) Thumb */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #4b5563; /* Tailwind's gray-700 */
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* For Firefox */
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #4b5563;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
