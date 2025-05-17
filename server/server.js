@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express'
 import cors from'cors'
 import connectDb from './configs/mongdb.js';
+import userRouter from './routes/userRoutes.js';
 
 
 //App config
@@ -22,6 +23,8 @@ app.get('/',(req,res)=>{
     res.send("Api working")
 })
 
+
+app.use('/api/user',userRouter)
 
 
 app.listen(PORT,()=>{
