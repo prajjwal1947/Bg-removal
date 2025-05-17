@@ -5,6 +5,8 @@ import userModel from "../models/userModel.js";
 const clerkWebHooks = async (req, res) => {
   try {
     const { body } = req;
+    console.log("Webhook body", body);
+    console.log("Webhook headers", req.headers);    
     const sig = req.headers["svix-signature"];
     const webhook = new Webhook(process.env.CLERK_WEBHOOK_API_KEY);
     const event = await webhook.verify(JSON.stringify(body), {
