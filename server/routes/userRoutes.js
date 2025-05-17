@@ -5,7 +5,7 @@ import e from 'express';
 const userRouter = express.Router();
 
 
-userRouter.post('/webhook', clerkWebHooks);
+userRouter.post('/webhooks', clerkWebHooks);
 
 
 export default userRouter;
