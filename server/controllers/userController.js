@@ -22,11 +22,10 @@ const clerkWebHooks = async (req, res) => {
           clerkId: data.id,
           firstName: data.first_name,
           lastName: data.last_name,
-          email: data.email_addresses[0].email_address,
-          image: data.profile_image_url,
-          status: data.status,
-          createdAt: data.created_at,
+          emailId: data.email_addresses[0].email_address, // FIXED
+          photo: data.profile_image_url,                  // FIXED
         };
+        
         await userModel.create(userData);
         res.json({ message: "User created" });
         break;
@@ -36,8 +35,8 @@ const clerkWebHooks = async (req, res) => {
         const userData = {
           firstName: data.first_name,
           lastName: data.last_name,
-          email: data.email_addresses[0].email_address,
-          image: data.profile_image_url,
+          emailId: data.email_addresses[0].email_address,
+          photo: data.profile_image_url,
           status: data.status,
           createdAt: data.created_at,
         };
