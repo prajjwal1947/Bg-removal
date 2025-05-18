@@ -3,6 +3,7 @@ import express from 'express'
 import cors from'cors'
 import connectDb from './configs/mongdb.js';
 import userRouter from './routes/userRoutes.js';
+import imageRouter from './routes/imageroutes.js';
 
 
 //App config
@@ -25,6 +26,8 @@ app.get('/',(req,res)=>{
 
 
 app.use('/api/user',userRouter)
+
+app.use('/api/image',imageRouter)
 
 
 app.listen(PORT,()=>{

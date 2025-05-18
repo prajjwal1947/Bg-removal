@@ -1,9 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { assets } from '../assets/assets'
+import { AppContext } from '../context/AppContext'
 
 const Upload = () => {
   const fileInputRef = useRef(null)
-
+   const {removeBg}=useContext(AppContext)
   // Function to trigger the file input when the upload box is clicked
   const handleUploadClick = () => {
     fileInputRef.current.click()
@@ -33,6 +34,8 @@ const Upload = () => {
           <input
             type='file'
             accept='image/*'
+            onChange={e=>removeBg(e.target.files)}
+            
             ref={fileInputRef}
             className='hidden'
           />
